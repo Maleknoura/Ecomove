@@ -43,6 +43,9 @@ public class DbFunction {
                 "conditions_accord TEXT, " +
                 "renouvelable BOOLEAN, " +
                 "statut_contrat VARCHAR(50)" +
+                "contractiId UUID, " +
+                "FOREIGN KEY (partnerId) REFERENCES Partner(id) ON DELETE CASCADE" +
+
                 ")";
         executeUpdate(conn, query);
     }
@@ -54,6 +57,8 @@ public class DbFunction {
                 "prix_vente DECIMAL, " +
                 "date_vente TIMESTAMP, " +
                 "statut_billet VARCHAR(50)" +
+                "contractiId UUID, " +
+                "FOREIGN KEY (contractId) REFERENCES Contract(id) ON DELETE SET NULL" +
                 ")";
         executeUpdate(conn, query);
     }

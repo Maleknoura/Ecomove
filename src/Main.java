@@ -6,8 +6,7 @@ public class Main {
     public static void main(String[] args) {
         DbFunction db = new DbFunction();
         Connection conn =db.connectToDb("Ecomove","postgres","administrateur");
-        db.createTablePartner(conn,"PromotionalOffer");
-        db.createTablePartner(conn,"Ticket");
+
     }
 
 }
