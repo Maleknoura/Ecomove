@@ -1,3 +1,5 @@
+import Model.TransportType;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 import java.math.BigDecimal;
