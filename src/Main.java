@@ -31,7 +31,7 @@ public class Main {
             }
         }
 
-&
+
         try {
             if (conn != null && !conn.isClosed()) {
                 conn.close();
