@@ -5,7 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eda18db6-c528-4bfb-a324-a6ba1e14742f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DAO/ContractDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DAO/PromotionalOfferDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DAO/TicketDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataBase/script.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Ticket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/ContractService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/PromotionalOfferService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/TicketService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/PartnerUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Contract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ContractStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ContractStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/PartnerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/PartnerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/PartnerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DbFunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DbFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/DbFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Partner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Partner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Partner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/PartnerStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/TransportType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/TransportType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TransportType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OfferStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/OfferStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PromotionalOffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PromotionalOffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReductionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ReductionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/PartnerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/PartnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PartnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ticket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicketStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TicketStatus.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +77,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\YCode\Desktop\Ecomove\src\DataBase" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

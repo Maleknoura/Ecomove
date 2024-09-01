@@ -1,98 +1,94 @@
 package Model;
+
 import java.util.Date;
 import java.util.UUID;
+
 public class Partner {
 
-        private UUID id;
-        private String nomCompagnie;
-        private String contactCommercial;
-        private TransportType typeTransport;
-        private String zoneGeographique;
-        private String conditionsSpeciales;
-        private PartnerStatus statutPartenaire;
-        private Date dateCreation;
+    private UUID id;
+    private String companyName;
+    private String commercialContact;
+    private TransportType transportType;
+    private String geographicArea;
+    private String specialConditions;
+    private PartnerStatus partnerStatus;
+    private Date creationDate;
 
-
-        public Partner(UUID id, String nomCompagnie, String contactCommercial,
-                       TransportType typeTransport, String zoneGeographique,
-                       String conditionsSpeciales, PartnerStatus statutPartenaire,
-                       Date dateCreation) {
-            this.id = id;
-            this.nomCompagnie = nomCompagnie;
-            this.contactCommercial = contactCommercial;
-            this.typeTransport = typeTransport;
-            this.zoneGeographique = zoneGeographique;
-            this.conditionsSpeciales = conditionsSpeciales;
-            this.statutPartenaire = statutPartenaire;
-            this.dateCreation = dateCreation;
-        }
-
-
-        public UUID getId() {
-            return id;
-        }
-
-        public void setId(UUID id) {
-            this.id = id;
-        }
-
-        public String getNomCompagnie() {
-            return nomCompagnie;
-        }
-
-        public void setNomCompagnie(String nomCompagnie) {
-            this.nomCompagnie = nomCompagnie;
-        }
-
-        public String getContactCommercial() {
-            return contactCommercial;
-        }
-
-        public void setContactCommercial(String contactCommercial) {
-            this.contactCommercial = contactCommercial;
-        }
-
-        public TransportType getTypeTransport() {
-            return typeTransport;
-        }
-
-        public void setTypeTransport(TransportType typeTransport) {
-            this.typeTransport = typeTransport;
-        }
-
-        public String getZoneGeographique() {
-            return zoneGeographique;
-        }
-
-        public void setZoneGeographique(String zoneGeographique) {
-            this.zoneGeographique = zoneGeographique;
-        }
-
-        public String getConditionsSpeciales() {
-            return conditionsSpeciales;
-        }
-
-        public void setConditionsSpeciales(String conditionsSpeciales) {
-            this.conditionsSpeciales = conditionsSpeciales;
-        }
-
-        public PartnerStatus getStatutPartenaire() {
-            return statutPartenaire;
-        }
-
-        public void setStatutPartenaire(PartnerStatus statutPartenaire) {
-            this.statutPartenaire = statutPartenaire;
-        }
-
-        public Date getDateCreation() {
-            return dateCreation;
-        }
-
-        public void setDateCreation(Date dateCreation) {
-            this.dateCreation = dateCreation;
-        }
-
-
+    public Partner(UUID id, String companyName, String commercialContact,
+                   TransportType transportType, String geographicArea,
+                   String specialConditions, PartnerStatus partnerStatus,
+                   Date creationDate) {
+        this.id = id;
+        this.companyName = companyName;
+        this.commercialContact = commercialContact;
+        this.transportType = transportType;
+        this.geographicArea = geographicArea;
+        this.specialConditions = specialConditions;
+        this.partnerStatus = partnerStatus;
+        this.creationDate = creationDate;
     }
 
+    public UUID getId() {
+        return id;
+    }
 
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getCommercialContact() {
+        return commercialContact;
+    }
+
+    public void setCommercialContact(String commercialContact) {
+        this.commercialContact = commercialContact;
+    }
+
+    public TransportType getTransportType() {
+        return transportType;
+    }
+
+    public void setTransportType(TransportType transportType) {
+        this.transportType = transportType;
+    }
+
+    public String getGeographicArea() {
+        return geographicArea;
+    }
+
+    public void setGeographicArea(String geographicArea) {
+        this.geographicArea = geographicArea;
+    }
+
+    public String getSpecialConditions() {
+        return specialConditions;
+    }
+
+    public void setSpecialConditions(String specialConditions) {
+        this.specialConditions = specialConditions;
+    }
+
+    public PartnerStatus getPartnerStatus() {
+        return partnerStatus;
+    }
+
+    public void setPartnerStatus(PartnerStatus partnerStatus) {
+        this.partnerStatus = partnerStatus;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+}

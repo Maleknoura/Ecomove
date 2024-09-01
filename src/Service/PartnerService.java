@@ -7,10 +7,9 @@ import java.util.List;
 import java.util.UUID;
 
 public class PartnerService {
-    private PartnerDAO partnerDAO;
-
-    public PartnerService(Connection connection) {
-        this.partnerDAO = new PartnerDAO(connection);
+    private final PartnerDAO partnerDAO;
+    public PartnerService(PartnerDAO partnerDAO) {
+        this.partnerDAO = partnerDAO;
     }
 
     public void createPartner(Partner partner) {
