@@ -24,10 +24,10 @@ public class PromotionalOfferDAO {
             pstmt.setString(3, offer.getDescription());
             pstmt.setDate(4, offer.getStartDate() != null ? Date.valueOf(offer.getStartDate()) : null);
             pstmt.setDate(5, offer.getEndDate() != null ? Date.valueOf(offer.getEndDate()) : null);
-            pstmt.setString(6, offer.getReductionType().toString());
+            pstmt.setObject(6, offer.getReductionType().toString(), java.sql.Types.OTHER);
             pstmt.setBigDecimal(7, offer.getReductionValue());
             pstmt.setString(8, offer.getConditions());
-            pstmt.setString(9, offer.getOfferStatus().toString());
+            pstmt.setObject(9, offer.getOfferStatus().toString(), java.sql.Types.OTHER);
 
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -66,10 +66,10 @@ public class PromotionalOfferDAO {
             pstmt.setString(2, offer.getDescription());
             pstmt.setDate(3, offer.getStartDate() != null ? Date.valueOf(offer.getStartDate()) : null);
             pstmt.setDate(4, offer.getEndDate() != null ? Date.valueOf(offer.getEndDate()) : null);
-            pstmt.setString(5, offer.getReductionType().toString());
+            pstmt.setObject(5, offer.getReductionType().toString(), java.sql.Types.OTHER);
             pstmt.setBigDecimal(6, offer.getReductionValue());
             pstmt.setString(7, offer.getConditions());
-            pstmt.setString(8, offer.getOfferStatus().toString());
+            pstmt.setObject(8, offer.getOfferStatus().toString(), java.sql.Types.OTHER);
             pstmt.setObject(9, offer.getId());
 
             pstmt.executeUpdate();

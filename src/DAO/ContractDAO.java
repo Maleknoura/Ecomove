@@ -24,7 +24,7 @@ public class ContractDAO {
             pstmt.setBigDecimal(4, contract.getSpecialRate());
             pstmt.setString(5, contract.getAgreementConditions());
             pstmt.setBoolean(6, contract.isRenewable());
-            pstmt.setString(7, contract.getContractStatus().toString());
+            pstmt.setObject(7, contract.getContractStatus().toString(), java.sql.Types.OTHER);
             pstmt.setObject(8, contract.getPartnerId());
 
             pstmt.executeUpdate();
@@ -64,7 +64,7 @@ public class ContractDAO {
             pstmt.setBigDecimal(3, contract.getSpecialRate());
             pstmt.setString(4, contract.getAgreementConditions());
             pstmt.setBoolean(5, contract.isRenewable());
-            pstmt.setString(6, contract.getContractStatus().toString());
+            pstmt.setObject(6, contract.getContractStatus().toString(), java.sql.Types.OTHER);
             pstmt.setObject(7, contract.getPartnerId());
             pstmt.setObject(8, contract.getId());
 
@@ -99,13 +99,16 @@ public class ContractDAO {
         return contracts;
     }
 
-    public void deleteContract(UUID id) {
-        String query = "DELETE FROM Contract WHERE id = ?";
-        try (PreparedStatement pstmt = connection.prepareStatement(query)) {
-            pstmt.setObject(1, id);
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
+
+
+        public void deleteContract(UUID id) {
+            String sql = "DELETE FROM Contract WHERE id = ?";
+            try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+                pstmt.setObject(1, id, Types.OTHER);
+                pstmt.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
-}
+

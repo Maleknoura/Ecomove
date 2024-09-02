@@ -1,33 +1,35 @@
-import DataBase.DbFunction;
-import Service.PartnerService;
+import DAO.ContractDAO;
 import DAO.PartnerDAO;
-import Model.Partner;
-import UI.PartnerUI;
+import DataBase.DbFunction;
+import DAO.PromotionalOfferDAO;
+import Service.ContractService;
+import UI.*;
+
 
 import java.sql.Connection;
-import java.util.UUID;
+import DAO.TicketDAO;
 
 public class Main {
     public static void main(String[] args) {
-
         DbFunction db = DbFunction.getInstance();
         Connection conn = db.connectToDb("Ecomove", "postgres", "administrateur");
-
         PartnerDAO partnerDAO = new PartnerDAO(conn);
+        ContractDAO contractDAO = new ContractDAO(conn);
+        PromotionalOfferDAO promotionalOfferDAO = new PromotionalOfferDAO(conn);
+        TicketDAO ticketDAO = new TicketDAO(conn);
 
-        PartnerService partnerService = new PartnerService(partnerDAO);
+
+        ContractService contractService = new ContractService(contractDAO);
 
         PartnerUI partnerUI = new PartnerUI(partnerDAO);
+        ContractUI contractUI = new ContractUI(contractService);
+        PromotionalOfferUI promotionalOfferUI = new PromotionalOfferUI(promotionalOfferDAO);
+        TicketUI ticketUI = new TicketUI(ticketDAO);
 
 
-        partnerUI.createPartner();
+        ConsoleUI consoleUI = new ConsoleUI(conn);
 
+        consoleUI.showMainMenu();
 
-
-
-
-
-
-        partnerUI.listAllPartners();
     }
 }

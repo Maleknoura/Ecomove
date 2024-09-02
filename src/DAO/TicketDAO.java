@@ -25,7 +25,7 @@ public class TicketDAO {
             statement.setString(2, ticket.getTransportType().name());
             statement.setBigDecimal(3, ticket.getPurchasePrice());
             statement.setBigDecimal(4, ticket.getSalePrice());
-            statement.setTimestamp(5, Timestamp.valueOf(ticket.getSaleDate()));
+            statement.setTimestamp(5, Timestamp.valueOf(ticket.getSaleDate()));  // Utilisez Timestamp ici
             statement.setString(6, ticket.getTicketStatus().name());
             statement.setObject(7, ticket.getContractId());
 

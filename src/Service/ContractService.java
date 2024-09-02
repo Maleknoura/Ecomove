@@ -10,8 +10,8 @@ import java.util.UUID;
 public class ContractService {
     private ContractDAO contractDAO;
 
-    public ContractService(Connection connection) {
-        this.contractDAO = new ContractDAO(connection);
+    public ContractService(ContractDAO contractDAO) {
+        this.contractDAO = contractDAO;
     }
 
     public void createContract(Contract contract) {

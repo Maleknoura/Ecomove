@@ -2,16 +2,14 @@ package Service;
 
 import DAO.PromotionalOfferDAO;
 import Model.PromotionalOffer;
-
-import java.sql.Connection;
 import java.util.List;
 import java.util.UUID;
 
 public class PromotionalOfferService {
-    private PromotionalOfferDAO promotionalOfferDAO;
+    private final PromotionalOfferDAO promotionalOfferDAO;
 
-    public PromotionalOfferService(Connection connection) {
-        this.promotionalOfferDAO = new PromotionalOfferDAO(connection);
+    public PromotionalOfferService(PromotionalOfferDAO promotionalOfferDAO) {
+        this.promotionalOfferDAO = promotionalOfferDAO;
     }
 
     public void createPromotionalOffer(PromotionalOffer offer) {

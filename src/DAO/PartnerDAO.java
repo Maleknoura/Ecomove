@@ -23,10 +23,10 @@ public class PartnerDAO {
             pstmt.setObject(1, partner.getId());
             pstmt.setString(2, partner.getCompanyName());
             pstmt.setString(3, partner.getCommercialContact());
-            pstmt.setString(4, partner.getTransportType().toString());
+            pstmt.setObject(4, partner.getTransportType().toString(), java.sql.Types.OTHER);
             pstmt.setString(5, partner.getGeographicArea());
             pstmt.setString(6, partner.getSpecialConditions());
-            pstmt.setString(7, partner.getPartnerStatus().toString());
+            pstmt.setObject(7, partner.getPartnerStatus().toString(), java.sql.Types.OTHER);
             pstmt.setTimestamp(8, new Timestamp(partner.getCreationDate().getTime()));
 
             pstmt.executeUpdate();
@@ -63,10 +63,10 @@ public class PartnerDAO {
         try (PreparedStatement pstmt = connection.prepareStatement(query)) {
             pstmt.setString(1, partner.getCompanyName());
             pstmt.setString(2, partner.getCommercialContact());
-            pstmt.setString(3, partner.getTransportType().toString());
+            pstmt.setObject(3, partner.getTransportType().toString(), java.sql.Types.OTHER);
             pstmt.setString(4, partner.getGeographicArea());
             pstmt.setString(5, partner.getSpecialConditions());
-            pstmt.setString(6, partner.getPartnerStatus().toString());
+            pstmt.setObject(6, partner.getPartnerStatus().toString(), java.sql.Types.OTHER);
             pstmt.setTimestamp(7, new Timestamp(partner.getCreationDate().getTime()));
             pstmt.setObject(8, partner.getId());
 
@@ -114,12 +114,13 @@ public class PartnerDAO {
     }
 
     public void deletePartner(UUID id) {
-        String query = "DELETE FROM Partner WHERE id = ?";
-        try (PreparedStatement pstmt = connection.prepareStatement(query)) {
-            pstmt.setObject(1, id);
+        String sql = "DELETE FROM partner WHERE id = ?";
+        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setObject(1, id, Types.OTHER);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-}
+    }
+

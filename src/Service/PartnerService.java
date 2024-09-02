@@ -2,7 +2,6 @@ package Service;
 import DAO.PartnerDAO;
 import Model.Partner;
 
-import java.sql.Connection;
 import java.util.List;
 import java.util.UUID;
 

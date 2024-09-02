@@ -1,7 +1,6 @@
 package UI;
 
 
-
 import java.util.Date;
 import java.util.UUID;
 import java.util.Scanner;
@@ -26,13 +25,13 @@ public class PartnerUI {
         System.out.print("Enter commercial contact: ");
         String commercialContact = scanner.nextLine();
 
-        System.out.print("Enter transport type (e.g., AIR, TRAIN, BUS): ");
+        System.out.print("Enter transport type (e.g., PLANE, TRAIN, BUS): ");
         TransportType transportType;
         try {
             transportType = TransportType.valueOf(scanner.nextLine().toUpperCase());
         } catch (IllegalArgumentException e) {
             System.out.println("Invalid transport type. Using default.");
-            transportType = TransportType.PLANE; // Default value or handle appropriately
+            transportType = TransportType.PLANE;
         }
 
         System.out.print("Enter geographic area: ");
@@ -41,13 +40,13 @@ public class PartnerUI {
         System.out.print("Enter special conditions: ");
         String specialConditions = scanner.nextLine();
 
-        System.out.print("Enter partner status (e.g., ACTIVE, INACTIVE, SUSPENDED): ");
+        System.out.print("Enter partner status (e.g., ACTIF ,INACTIF, SUSPENDED): ");
         PartnerStatus partnerStatus;
         try {
             partnerStatus = PartnerStatus.valueOf(scanner.nextLine().toUpperCase());
         } catch (IllegalArgumentException e) {
             System.out.println("Invalid partner status. Using default.");
-            partnerStatus = PartnerStatus.ACTIF;
+            partnerStatus = PartnerStatus.ACTIVE;
         }
 
         Date creationDate = new Date();
@@ -64,7 +63,7 @@ public class PartnerUI {
                 creationDate
         );
 
-        // Save the partner using the PartnerDAO
+
         partnerDAO.createPartner(partner);
         System.out.println("Partner created successfully.");
     }
@@ -134,13 +133,11 @@ public class PartnerUI {
         }
     }
 
-    public void deletePartner() {
-        System.out.print("Enter partner ID to delete: ");
-        UUID id = UUID.fromString(scanner.nextLine());
-
+    public void deletePartner(UUID id) {
         partnerDAO.deletePartner(id);
         System.out.println("Partner deleted successfully.");
     }
+
 
     public void listAllPartners() {
         for (Partner partner : partnerDAO.getAllPartners()) {
