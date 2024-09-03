@@ -1,5 +1,6 @@
 package DAO;
 
+import Model.ContractStatus;
 import Model.Partner;
 import Model.PartnerStatus;
 import Model.TransportType;
@@ -18,6 +19,8 @@ public class PartnerDAO {
     }
 
     public void createPartner(Partner partner) {
+        partner.setPartnerStatus(PartnerStatus.ACTIVE);
+
         String query = "INSERT INTO Partner (id, companyName, commercialContact, transportType, geographicArea, specialConditions, partnerStatus, creationDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement pstmt = connection.prepareStatement(query)) {
             pstmt.setObject(1, partner.getId());

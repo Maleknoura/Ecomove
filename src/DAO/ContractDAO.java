@@ -4,6 +4,7 @@ import Model.Contract;
 import Model.ContractStatus;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -16,6 +17,13 @@ public class ContractDAO {
     }
 
     public void createContract(Contract contract) {
+
+        if (!contract.getStartDate().isAfter(LocalDate.now())) {
+            System.out.println("Date invalide!");
+            return;
+        }
+        contract.setContractStatus(ContractStatus.ONGOING);
+
         String query = "INSERT INTO Contract (id, startDate, endDate, specialRate, agreementConditions, renewable, contractStatus, partnerId) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement pstmt = connection.prepareStatement(query)) {
             pstmt.setObject(1, contract.getId());
@@ -27,11 +35,18 @@ public class ContractDAO {
             pstmt.setObject(7, contract.getContractStatus().toString(), java.sql.Types.OTHER);
             pstmt.setObject(8, contract.getPartnerId());
 
-            pstmt.executeUpdate();
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Contract created successfully.");
+            } else {
+                System.out.println("Failed to create contract.");
+            }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error creating contract: " + e.getMessage());
         }
     }
+
+
 
     public Contract getContractById(UUID id) {
         String query = "SELECT * FROM Contract WHERE id = ?";
@@ -57,20 +72,24 @@ public class ContractDAO {
     }
 
     public void updateContract(Contract contract) {
-        String query = "UPDATE Contract SET startDate = ?, endDate = ?, specialRate = ?, agreementConditions = ?, renewable = ?, contractStatus = ?, partnerId = ? WHERE id = ?";
-        try (PreparedStatement pstmt = connection.prepareStatement(query)) {
-            pstmt.setDate(1, Date.valueOf(contract.getStartDate()));
-            pstmt.setDate(2, contract.getEndDate() != null ? Date.valueOf(contract.getEndDate()) : null);
-            pstmt.setBigDecimal(3, contract.getSpecialRate());
-            pstmt.setString(4, contract.getAgreementConditions());
-            pstmt.setBoolean(5, contract.isRenewable());
-            pstmt.setObject(6, contract.getContractStatus().toString(), java.sql.Types.OTHER);
-            pstmt.setObject(7, contract.getPartnerId());
-            pstmt.setObject(8, contract.getId());
+        if (contract.getStartDate().isAfter(LocalDate.now())) {
+            String query = "UPDATE Contract SET startDate = ?, endDate = ?, specialRate = ?, agreementConditions = ?, renewable = ?, contractStatus = ?, partnerId = ? WHERE id = ?";
+            try (PreparedStatement pstmt = connection.prepareStatement(query)) {
+                pstmt.setDate(1, Date.valueOf(contract.getStartDate()));
+                pstmt.setDate(2, contract.getEndDate() != null ? Date.valueOf(contract.getEndDate()) : null);
+                pstmt.setBigDecimal(3, contract.getSpecialRate());
+                pstmt.setString(4, contract.getAgreementConditions());
+                pstmt.setBoolean(5, contract.isRenewable());
+                pstmt.setObject(6, contract.getContractStatus().toString(), java.sql.Types.OTHER);
+                pstmt.setObject(7, contract.getPartnerId());
+                pstmt.setObject(8, contract.getId());
 
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
+                pstmt.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("La date de début du contrat doit être postérieure à aujourd'hui.");
         }
     }
 
@@ -99,16 +118,13 @@ public class ContractDAO {
         return contracts;
     }
 
-
-
-        public void deleteContract(UUID id) {
-            String sql = "DELETE FROM Contract WHERE id = ?";
-            try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
-                pstmt.setObject(1, id, Types.OTHER);
-                pstmt.executeUpdate();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+    public void deleteContract(UUID id) {
+        String sql = "DELETE FROM Contract WHERE id = ?";
+        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setObject(1, id, Types.OTHER);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
-
+}

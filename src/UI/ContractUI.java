@@ -37,14 +37,7 @@ public class ContractUI {
         System.out.print("Is renewable (true/false): ");
         boolean renewable = Boolean.parseBoolean(scanner.nextLine());
 
-        System.out.print("Enter contract status (e.g., ACTIVE, TERMINATED, SUSPENDED): ");
-        ContractStatus contractStatus;
-        try {
-            contractStatus = ContractStatus.valueOf(scanner.nextLine().toUpperCase());
-        } catch (IllegalArgumentException e) {
-            System.out.println("Invalid contract status. Using default (ONGOING).");
-            contractStatus = ContractStatus.ONGOING;
-        }
+
 
         System.out.print("Enter partner ID (UUID): ");
         UUID partnerId = UUID.fromString(scanner.nextLine());
@@ -56,7 +49,7 @@ public class ContractUI {
                 specialRate,
                 agreementConditions,
                 renewable,
-                contractStatus,
+                ContractStatus.ONGOING,
                 partnerId
         );
 

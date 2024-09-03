@@ -17,6 +17,7 @@ public class PromotionalOfferDAO {
     }
 
     public void createPromotionalOffer(PromotionalOffer offer) {
+
         String query = "INSERT INTO PromotionalOffer (id, offerName, description, startDate, endDate, reductionType, reductionValue, conditions, offerStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement pstmt = connection.prepareStatement(query)) {
             pstmt.setObject(1, offer.getId());

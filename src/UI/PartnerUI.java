@@ -40,7 +40,7 @@ public class PartnerUI {
         System.out.print("Enter special conditions: ");
         String specialConditions = scanner.nextLine();
 
-        System.out.print("Enter partner status (e.g., ACTIF ,INACTIF, SUSPENDED): ");
+        System.out.print("Enter partner status (e.g., ACTIVE ,INACTIF, SUSPENDED): ");
         PartnerStatus partnerStatus;
         try {
             partnerStatus = PartnerStatus.valueOf(scanner.nextLine().toUpperCase());
