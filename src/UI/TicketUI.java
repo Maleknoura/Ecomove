@@ -1,9 +1,11 @@
 package UI;
 
 import DAO.TicketDAO;
+import Model.Contract;
 import Model.Ticket;
 import Model.TicketStatus;
 import Model.TransportType;
+import Service.TicketService;
 
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -13,11 +15,11 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class TicketUI {
-    private TicketDAO ticketDAO;
+    private TicketService ticketService;
     private Scanner scanner;
 
-    public TicketUI(TicketDAO ticketDAO) {
-        this.ticketDAO = ticketDAO;
+    public TicketUI(TicketService ticketService) {
+        this.ticketService = ticketService; // Correction de la référence
         this.scanner = new Scanner(System.in);
     }
 
@@ -36,7 +38,6 @@ public class TicketUI {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate localDate = LocalDate.parse(scanner.nextLine(), formatter);
 
-        // Convert LocalDate to java.sql.Date
         Date saleDate = Date.valueOf(localDate);
 
         System.out.print("Enter ticket status (SOLD, CANCELLED, PENDING): ");
@@ -47,14 +48,13 @@ public class TicketUI {
 
         Ticket ticket = new Ticket(UUID.randomUUID(), transportType, purchasePrice, salePrice, saleDate, ticketStatus, contractId);
 
-        ticketDAO.createTicket(ticket);
+        ticketService.createTicket(ticket);
         System.out.println("Ticket created successfully.");
     }
 
     public void listAllTickets() {
-        ticketDAO.displayAllTickets();
-    }
+        ticketService.displayAllTickets();
     }
 
-
+    }
 

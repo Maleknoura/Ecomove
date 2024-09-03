@@ -6,6 +6,7 @@ import Model.TransportType;
 
 import java.math.BigDecimal;
 import java.sql.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -45,23 +46,26 @@ public class TicketDAO {
 
             while (resultSet.next()) {
                 UUID ticketId = UUID.fromString(resultSet.getString("id"));
-                String transportType = resultSet.getString("transportType");
+                TransportType transportType = TransportType.valueOf(resultSet.getString("transportType"));
                 BigDecimal purchasePrice = resultSet.getBigDecimal("purchasePrice");
                 BigDecimal salePrice = resultSet.getBigDecimal("salePrice");
-                LocalDateTime saleDate = resultSet.getTimestamp("saleDate").toLocalDateTime();
-                String ticketStatus = resultSet.getString("ticketStatus");
+                Date saleDate = resultSet.getDate("saleDate");
+                TicketStatus ticketStatus = TicketStatus.valueOf(resultSet.getString("ticketStatus"));
                 UUID contractId = UUID.fromString(resultSet.getString("contractId"));
+
+                LocalDate localSaleDate = saleDate != null ? saleDate.toLocalDate() : null;
 
                 System.out.println("Ticket ID: " + ticketId);
                 System.out.println("Transport Type: " + transportType);
                 System.out.println("Purchase Price: " + purchasePrice);
                 System.out.println("Sale Price: " + salePrice);
-                System.out.println("Sale Date: " + saleDate);
+                System.out.println("Sale Date: " + (localSaleDate != null ? localSaleDate : "N/A"));
                 System.out.println("Ticket Status: " + ticketStatus);
                 System.out.println("Contract ID: " + contractId);
                 System.out.println("---------------------------------");
             }
-        } catch (SQLException e) {
+
+    } catch (SQLException e) {
             e.printStackTrace();
         }
     }

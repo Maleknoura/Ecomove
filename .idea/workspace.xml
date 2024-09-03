@@ -7,10 +7,8 @@
     <list default="true" id="eda18db6-c528-4bfb-a324-a6ba1e14742f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAO/TicketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/TicketDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataBase/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/script.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/TicketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/ConsoleUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/ConsoleUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/TicketUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TicketUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

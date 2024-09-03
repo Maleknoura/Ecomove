@@ -9,14 +9,15 @@ import java.sql.Connection;
 public class TicketService {
     private TicketDAO ticketDAO;
 
-    public TicketService(Connection connection) {
-        this.ticketDAO = new TicketDAO(connection);
+    public TicketService(TicketDAO ticketDAO) {
+        this.ticketDAO = ticketDAO;
     }
 
 
     public void createTicket(Ticket ticket) {
         ticketDAO.createTicket(ticket);
     }
+
 
 
     public void displayAllTickets() {

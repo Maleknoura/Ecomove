@@ -3,7 +3,6 @@ package UI;
 import DAO.*;
 import Service.*;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -29,12 +28,13 @@ public class ConsoleUI {
 
 
         ContractService contractService = new ContractService(contractDAO);
+        TicketService ticketService = new TicketService(ticketDAO);
 
 
         this.partnerUI = new PartnerUI(partnerDAO);
         this.contractUI = new ContractUI(contractService);
         this.promotionalOfferUI = new PromotionalOfferUI(promotionalOfferDAO);
-        this.ticketUI = new TicketUI(ticketDAO);
+        this.ticketUI = new TicketUI(ticketService);
     }
 
     public void showMainMenu() {
@@ -103,7 +103,6 @@ public class ConsoleUI {
                     UUID deleteId = UUID.fromString(scanner.nextLine());
                     partnerUI.deletePartner(deleteId);
                     break;
-
                 case 0:
                     return;
                 default:
@@ -142,7 +141,6 @@ public class ConsoleUI {
                     UUID deleteId = UUID.fromString(scanner.nextLine());
                     contractUI.deleteContract(deleteId);
                     break;
-
                 case 0:
                     return;
                 default:
@@ -160,7 +158,6 @@ public class ConsoleUI {
             System.out.println("2. Display Promotional Offer");
             System.out.println("3. Update Promotional Offer");
             System.out.println("4. Delete Promotional Offer");
-
             System.out.println("0. Back to Main Menu");
             System.out.print("Choose an option: ");
 
@@ -184,8 +181,6 @@ public class ConsoleUI {
                     UUID deleteId = UUID.fromString(scanner.nextLine());
                     promotionalOfferUI.deletePromotionalOffer(deleteId);
                     break;
-
-
                 case 0:
                     return;
                 default:
@@ -201,7 +196,6 @@ public class ConsoleUI {
             System.out.println("Ticket Management Menu:");
             System.out.println("1. Create Ticket");
             System.out.println("2. Display Ticket");
-
             System.out.println("0. Back to Main Menu");
             System.out.print("Choose an option: ");
 
@@ -213,10 +207,8 @@ public class ConsoleUI {
                     ticketUI.createTicket();
                     break;
                 case 2:
-                 ticketUI.listAllTickets();
+                    ticketUI.listAllTickets();
                     break;
-
-
                 case 0:
                     return;
                 default:

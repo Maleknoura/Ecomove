@@ -3,6 +3,7 @@ import DAO.PartnerDAO;
 import DataBase.DbFunction;
 import DAO.PromotionalOfferDAO;
 import Service.ContractService;
+import Service.TicketService;
 import UI.*;
 
 
@@ -20,12 +21,13 @@ public class Main {
 
 
         ContractService contractService = new ContractService(contractDAO);
+        TicketService ticketService = new TicketService(ticketDAO);
+
 
         PartnerUI partnerUI = new PartnerUI(partnerDAO);
         ContractUI contractUI = new ContractUI(contractService);
         PromotionalOfferUI promotionalOfferUI = new PromotionalOfferUI(promotionalOfferDAO);
-        TicketUI ticketUI = new TicketUI(ticketDAO);
-
+        TicketUI ticketUI = new TicketUI(ticketService);
 
         ConsoleUI consoleUI = new ConsoleUI(conn);
 
