@@ -1,6 +1,7 @@
 package Model;
 
 import java.time.LocalDateTime;
+import java.sql.Date;
 import java.util.UUID;
 import java.math.BigDecimal;
 
@@ -10,12 +11,12 @@ public class Ticket {
     private TransportType transportType;
     private BigDecimal purchasePrice;
     private BigDecimal salePrice;
-    private LocalDateTime saleDate;
+    private Date saleDate;
     private TicketStatus ticketStatus;
     private UUID contractId;
 
     public Ticket(UUID id, TransportType transportType, BigDecimal purchasePrice,
-                  BigDecimal salePrice, LocalDateTime saleDate,
+                  BigDecimal salePrice, Date saleDate,
                   TicketStatus ticketStatus, UUID contractId) {
         this.id = id;
         this.transportType = transportType;
@@ -60,11 +61,11 @@ public class Ticket {
         this.salePrice = salePrice;
     }
 
-    public LocalDateTime getSaleDate() {
+    public Date getSaleDate() {
         return saleDate;
     }
 
-    public void setSaleDate(LocalDateTime saleDate) {
+    public void setSaleDate(Date saleDate) {
         this.saleDate = saleDate;
     }
 

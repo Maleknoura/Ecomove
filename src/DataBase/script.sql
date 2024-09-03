@@ -34,7 +34,7 @@ CREATE TABLE Ticket (
     transportType TransportType,
     purchasePrice DECIMAL,
     salePrice DECIMAL,
-    saleDate TIMESTAMP,
+    saleDate DATE,
     ticketStatus TicketStatus,
     contractId UUID,
     FOREIGN KEY (contractId) REFERENCES Contract(id) ON DELETE SET NULL

@@ -5,23 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eda18db6-c528-4bfb-a324-a6ba1e14742f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/UI/ConsoleUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/ContractUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/PromotionalOfferUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/TicketUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/ContractDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/ContractDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/PartnerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/PartnerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/PromotionalOfferDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/PromotionalOfferDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAO/TicketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/TicketDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataBase/DbFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/DbFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/PartnerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PartnerStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ContractService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/PartnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PartnerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/PromotionalOfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PromotionalOfferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/PartnerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/PartnerUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataBase/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/ConsoleUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/ConsoleUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/TicketUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TicketUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

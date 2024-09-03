@@ -6,7 +6,9 @@ import Model.TicketStatus;
 import Model.TransportType;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -30,8 +32,12 @@ public class TicketUI {
         BigDecimal salePrice = scanner.nextBigDecimal();
         scanner.nextLine();
 
-        System.out.print("Enter sale date (yyyy-MM-dd ): ");
-        LocalDateTime saleDate = LocalDateTime.parse(scanner.nextLine());
+        System.out.print("Enter sale date (yyyy-MM-dd): ");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate localDate = LocalDate.parse(scanner.nextLine(), formatter);
+
+        // Convert LocalDate to java.sql.Date
+        Date saleDate = Date.valueOf(localDate);
 
         System.out.print("Enter ticket status (SOLD, CANCELLED, PENDING): ");
         TicketStatus ticketStatus = TicketStatus.valueOf(scanner.nextLine().toUpperCase());
@@ -45,23 +51,10 @@ public class TicketUI {
         System.out.println("Ticket created successfully.");
     }
 
-    public void displayTicket() {
-        System.out.print("Enter ticket ID: ");
-        UUID ticketId = UUID.fromString(scanner.nextLine());
-
-        Ticket ticket = ticketDAO.getTicketById(ticketId);
-        if (ticket != null) {
-            System.out.println("Ticket ID: " + ticket.getId());
-            System.out.println("Transport Type: " + ticket.getTransportType());
-            System.out.println("Purchase Price: " + ticket.getPurchasePrice());
-            System.out.println("Sale Price: " + ticket.getSalePrice());
-            System.out.println("Sale Date: " + ticket.getSaleDate());
-            System.out.println("Ticket Status: " + ticket.getTicketStatus());
-            System.out.println("Contract ID: " + ticket.getContractId());
-        } else {
-            System.out.println("Ticket not found.");
-        }
+    public void listAllTickets() {
+        ticketDAO.displayAllTickets();
+    }
     }
 
 
-}
+

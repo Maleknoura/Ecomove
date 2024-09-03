@@ -4,7 +4,7 @@ import DAO.TicketDAO;
 import Model.Ticket;
 
 import java.sql.Connection;
-import java.util.UUID;
+
 
 public class TicketService {
     private TicketDAO ticketDAO;
@@ -19,8 +19,8 @@ public class TicketService {
     }
 
 
-    public Ticket getTicketById(UUID id) {
-        return ticketDAO.getTicketById(id);
+    public void displayAllTickets() {
+        ticketDAO.displayAllTickets();
     }
 }
 

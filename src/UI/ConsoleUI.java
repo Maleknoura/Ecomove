@@ -49,7 +49,7 @@ public class ConsoleUI {
             System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -82,21 +82,18 @@ public class ConsoleUI {
             System.out.println("2. Display Partner");
             System.out.println("3. Update Partner");
             System.out.println("4. Delete Partner");
-            System.out.println("5. List All Partners");
             System.out.println("0. Back to Main Menu");
             System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
                     partnerUI.createPartner();
                     break;
                 case 2:
-                    System.out.print("Enter partner ID to display: ");
-                    UUID displayId = UUID.fromString(scanner.nextLine());
-                    partnerUI.displayPartner(displayId);
+                    partnerUI.listAllPartners();
                     break;
                 case 3:
                     partnerUI.updatePartner();
@@ -106,9 +103,7 @@ public class ConsoleUI {
                     UUID deleteId = UUID.fromString(scanner.nextLine());
                     partnerUI.deletePartner(deleteId);
                     break;
-                case 5:
-                    partnerUI.listAllPartners();
-                    break;
+
                 case 0:
                     return;
                 default:
@@ -126,21 +121,18 @@ public class ConsoleUI {
             System.out.println("2. Display Contract");
             System.out.println("3. Update Contract");
             System.out.println("4. Delete Contract");
-            System.out.println("5. List All Contracts");
             System.out.println("0. Back to Main Menu");
             System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
                     contractUI.createContract();
                     break;
                 case 2:
-                    System.out.print("Enter contract ID to display: ");
-                    UUID displayId = UUID.fromString(scanner.nextLine());
-                    contractUI.displayContract(displayId);
+                    contractUI.listAllContracts();
                     break;
                 case 3:
                     contractUI.updateContract();
@@ -150,9 +142,7 @@ public class ConsoleUI {
                     UUID deleteId = UUID.fromString(scanner.nextLine());
                     contractUI.deleteContract(deleteId);
                     break;
-                case 5:
-                    contractUI.listAllContracts();
-                    break;
+
                 case 0:
                     return;
                 default:
@@ -170,21 +160,19 @@ public class ConsoleUI {
             System.out.println("2. Display Promotional Offer");
             System.out.println("3. Update Promotional Offer");
             System.out.println("4. Delete Promotional Offer");
-            System.out.println("5. List All Promotional Offers");
+
             System.out.println("0. Back to Main Menu");
             System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
                     promotionalOfferUI.createPromotionalOffer();
                     break;
                 case 2:
-                    System.out.print("Enter promotional offer ID to display: ");
-                    UUID displayId = UUID.fromString(scanner.nextLine());
-                    promotionalOfferUI.displayPromotionalOffer(displayId);
+                    promotionalOfferUI.listAllPromotionalOffers();
                     break;
                 case 3:
                     System.out.print("Enter promotional offer ID to update: ");
@@ -196,9 +184,8 @@ public class ConsoleUI {
                     UUID deleteId = UUID.fromString(scanner.nextLine());
                     promotionalOfferUI.deletePromotionalOffer(deleteId);
                     break;
-                case 5:
-                    promotionalOfferUI.listAllPromotionalOffers();
-                    break;
+
+
                 case 0:
                     return;
                 default:
@@ -214,9 +201,7 @@ public class ConsoleUI {
             System.out.println("Ticket Management Menu:");
             System.out.println("1. Create Ticket");
             System.out.println("2. Display Ticket");
-            System.out.println("3. Update Ticket");
-            System.out.println("4. Delete Ticket");
-            System.out.println("5. List All Tickets");
+
             System.out.println("0. Back to Main Menu");
             System.out.print("Choose an option: ");
 
@@ -228,9 +213,7 @@ public class ConsoleUI {
                     ticketUI.createTicket();
                     break;
                 case 2:
-                    System.out.print("Enter ticket ID to display: ");
-                    UUID displayId = UUID.fromString(scanner.nextLine());
-                    ticketUI.displayTicket();
+                 ticketUI.listAllTickets();
                     break;
 
 
