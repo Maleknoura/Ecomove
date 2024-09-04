@@ -12,6 +12,7 @@ import DAO.TicketDAO;
 
 public class Main {
     public static void main(String[] args) {
+
         DbFunction db = DbFunction.getInstance();
         Connection conn = db.connectToDb("Ecomove", "postgres", "administrateur");
         PartnerDAO partnerDAO = new PartnerDAO(conn);

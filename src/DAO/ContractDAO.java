@@ -19,7 +19,11 @@ public class ContractDAO {
     public void createContract(Contract contract) {
 
         if (!contract.getStartDate().isAfter(LocalDate.now())) {
-            System.out.println("Date invalide!");
+            System.out.println("invalid date!");
+            return;
+        }
+        if (contract.getEndDate() != null && !contract.getStartDate().isBefore(contract.getEndDate())) {
+            System.out.println("Invalid date! The end date must be after the start date.");
             return;
         }
         contract.setContractStatus(ContractStatus.ONGOING);
@@ -35,12 +39,8 @@ public class ContractDAO {
             pstmt.setObject(7, contract.getContractStatus().toString(), java.sql.Types.OTHER);
             pstmt.setObject(8, contract.getPartnerId());
 
-            int rowsAffected = pstmt.executeUpdate();
-            if (rowsAffected > 0) {
-                System.out.println("Contract created successfully.");
-            } else {
-                System.out.println("Failed to create contract.");
-            }
+             pstmt.executeUpdate();
+
         } catch (SQLException e) {
             System.out.println("Error creating contract: " + e.getMessage());
         }
@@ -72,7 +72,14 @@ public class ContractDAO {
     }
 
     public void updateContract(Contract contract) {
-        if (contract.getStartDate().isAfter(LocalDate.now())) {
+        if (!contract.getStartDate().isAfter(LocalDate.now())) {
+            System.out.println("invalid date!");
+            return;
+        }
+        if (contract.getEndDate() != null && !contract.getStartDate().isBefore(contract.getEndDate())) {
+            System.out.println("Invalid date! The end date must be after the start date.");
+            return;
+        } {
             String query = "UPDATE Contract SET startDate = ?, endDate = ?, specialRate = ?, agreementConditions = ?, renewable = ?, contractStatus = ?, partnerId = ? WHERE id = ?";
             try (PreparedStatement pstmt = connection.prepareStatement(query)) {
                 pstmt.setDate(1, Date.valueOf(contract.getStartDate()));
@@ -88,8 +95,6 @@ public class ContractDAO {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        } else {
-            System.out.println("La date de début du contrat doit être postérieure à aujourd'hui.");
         }
     }
 

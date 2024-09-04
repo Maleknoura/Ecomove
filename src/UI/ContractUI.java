@@ -53,8 +53,13 @@ public class ContractUI {
                 partnerId
         );
 
-        contractService.createContract(contract);
-        System.out.println("Contract created successfully.");
+        boolean isAdded = contractService.createContract(contract);
+        if (isAdded){
+            System.out.println("Contract added succesffuly");
+        }else{
+            System.out.println("Failed to create Contract");
+
+        }
     }
 
     public void displayContract(UUID id) {
@@ -119,13 +124,15 @@ public class ContractUI {
                 }
             }
 
-            contractService.updateContract(contract);
-            System.out.println("Contract updated successfully.");
-        } else {
-            System.out.println("Contract not found.");
+            boolean isupdated = contractService.updateContract(contract);
+            if (isupdated) {
+                System.out.println("Contract added succesffuly");
+            } else {
+                System.out.println("Failed to create Contract");
+
+            }
         }
     }
-
 
     public void deleteContract(UUID id) {
         contractService.deleteContract(id);

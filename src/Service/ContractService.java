@@ -3,7 +3,6 @@ package Service;
 import DAO.ContractDAO;
 import Model.Contract;
 
-import java.sql.Connection;
 import java.util.List;
 import java.util.UUID;
 
@@ -14,16 +13,18 @@ public class ContractService {
         this.contractDAO = contractDAO;
     }
 
-    public void createContract(Contract contract) {
+    public boolean createContract(Contract contract) {
         contractDAO.createContract(contract);
+        return true;
     }
 
     public Contract getContractById(UUID id) {
         return contractDAO.getContractById(id);
     }
 
-    public void updateContract(Contract contract) {
+    public boolean updateContract(Contract contract) {
         contractDAO.updateContract(contract);
+        return true;
     }
 
     public void deleteContract(UUID id) {
