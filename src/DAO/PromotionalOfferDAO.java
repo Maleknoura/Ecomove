@@ -15,9 +15,15 @@ public class PromotionalOfferDAO {
     public PromotionalOfferDAO(Connection connection) {
         this.connection = connection;
     }
-
+// if (!contract.getStartDate().isAfter(LocalDate.now())) {
+//            System.out.println("invalid date!");
+//            return;
+//        }
+//        if (contract.getEndDate() != null && !contract.getStartDate().isBefore(contract.getEndDate())) {
+//            System.out.println("Invalid date! The end date must be after the start date.");
+//            return;
+//        }//
     public void createPromotionalOffer(PromotionalOffer offer) {
-
         String query = "INSERT INTO PromotionalOffer (id, offerName, description, startDate, endDate, reductionType, reductionValue, conditions, offerStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement pstmt = connection.prepareStatement(query)) {
             pstmt.setObject(1, offer.getId());
