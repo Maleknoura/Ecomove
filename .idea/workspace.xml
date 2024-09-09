@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eda18db6-c528-4bfb-a324-a6ba1e14742f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DAO/ClientDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Reservation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/ReservationTicket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Trip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/ContractDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/ContractDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataBase/DbFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/DbFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataBase/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/script.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ContractService.java" afterDir="false" />
-    </list>
+    <list default="true" id="eda18db6-c528-4bfb-a324-a6ba1e14742f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

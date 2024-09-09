@@ -59,6 +59,21 @@ public class ClientDAO {
         }
         return false;
     }
+    public void updateClient(Client client) {
+        String query = "UPDATE Client SET FirstName = ?, LastName = ?, NumberPhone = ? WHERE Email = ?";
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setString(1, client.getFirstName());
+            ps.setString(2, client.getLastName());
+            ps.setString(3, client.getPhoneNumber());
+            ps.setString(4, client.getEmail());
+            int rowsUpdated = ps.executeUpdate();
+            if (rowsUpdated == 0) {
+                System.out.println("No client found with email: " + client.getEmail());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
 
