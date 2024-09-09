@@ -15,7 +15,6 @@ public class ContractDAO {
     public ContractDAO(Connection connection) {
         this.connection = connection;
     }
-
     public void createContract(Contract contract) {
 
         if (!contract.getStartDate().isAfter(LocalDate.now())) {

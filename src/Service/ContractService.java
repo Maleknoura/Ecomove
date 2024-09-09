@@ -14,6 +14,7 @@ public class ContractService {
     }
 
     public boolean createContract(Contract contract) {
+
         contractDAO.createContract(contract);
         return true;
     }

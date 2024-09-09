@@ -21,6 +21,7 @@ public class DbFunction {
         return instance;
     }
 
+
     public Connection connectToDb(String dbname, String user, String password) {
         if (conn == null) {
             try {
@@ -51,6 +52,7 @@ public class DbFunction {
             }
         }
     }
+
 }
 
 

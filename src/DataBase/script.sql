@@ -51,3 +51,9 @@ CREATE TABLE PromotionalOffer (
     conditions TEXT,
     offerStatus OfferStatus
 );
+CREATE TABLE Client (
+      Email VARCHAR(255) UNIQUE PRIMARY KEY,
+      FirstName VARCHAR(255),
+      LastName VARCHAR(255),
+      NumberPhone int
+  );

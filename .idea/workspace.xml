@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eda18db6-c528-4bfb-a324-a6ba1e14742f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Vehicule.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DAO/ClientDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Reservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/ReservationTicket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Trip.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/ContractDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/ContractDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataBase/DbFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/DbFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataBase/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ContractService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,21 +44,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/YCode/Downloads/postgresql-42.7.4.jar&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/YCode/Desktop/Ecomove/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Ecomove2",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/YCode/Downloads/postgresql-42.7.4.jar",
+    "onboarding.tips.debug.path": "C:/Users/YCode/Desktop/Ecomove/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.completion"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\YCode\Desktop\Ecomove\out\production\Ecomove" />
