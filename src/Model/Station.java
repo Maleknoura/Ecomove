@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-public class Trip {
+public class Station {
 
     private UUID id;
     private String departureLocation;
@@ -14,7 +14,7 @@ public class Trip {
     private Date arrivalTime;
     private List<Ticket> tickets;
 
-    public Trip(UUID id, String departureLocation, String arrivalLocation, Date departureTime, Date arrivalTime) {
+    public Station(UUID id, String departureLocation, String arrivalLocation, Date departureTime, Date arrivalTime) {
         this.id = id;
         this.departureLocation = departureLocation;
         this.arrivalLocation = arrivalLocation;
@@ -70,6 +70,6 @@ public class Trip {
 
     public void addTicket(Ticket ticket) {
         this.tickets.add(ticket);
-        ticket.setTrip(this);
+        ticket.setStation(this);
     }
 }

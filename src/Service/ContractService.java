@@ -18,7 +18,6 @@ public class ContractService {
         contractDAO.createContract(contract);
         return true;
     }
-
     public Contract getContractById(UUID id) {
         return contractDAO.getContractById(id);
     }

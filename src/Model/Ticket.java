@@ -1,6 +1,5 @@
 package Model;
 
-import java.time.LocalDateTime;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,7 @@ public class Ticket {
         private TicketStatus ticketStatus;
         private UUID contractId;
         private List<ReservationTicket> reservationTickets;
-    private Trip trip;
+    private Station station;
 
         public Ticket(UUID id, TransportType transportType, BigDecimal purchasePrice,
                       BigDecimal salePrice, Date saleDate,
@@ -96,11 +95,11 @@ public class Ticket {
     public void addReservationTicket(ReservationTicket reservationTicket) {
         this.reservationTickets.add(reservationTicket);
     }
-    public Trip getTrip() {
-        return trip;
+    public Station getTrip() {
+        return station;
     }
 
-    public void setTrip(Trip trip) {
-        this.trip = trip;
+    public void setStation(Station station) {
+        this.station = station;
     }
 }

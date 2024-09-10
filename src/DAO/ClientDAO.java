@@ -2,6 +2,7 @@ package DAO;
 
 import Model.Client;
 
+import javax.print.attribute.standard.MediaSize;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -75,5 +76,9 @@ public class ClientDAO {
         }
     }
 
-}
+
+
+    }
+
+
 
