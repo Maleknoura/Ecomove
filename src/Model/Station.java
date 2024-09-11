@@ -1,7 +1,6 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -10,19 +9,16 @@ public class Station {
     private UUID id;
     private String departureLocation;
     private String arrivalLocation;
-    private Date departureTime;
-    private Date arrivalTime;
+    private double distance;
     private List<Ticket> tickets;
 
-    public Station(UUID id, String departureLocation, String arrivalLocation, Date departureTime, Date arrivalTime) {
+    public Station(UUID id, String departureLocation, String arrivalLocation, double distance) {
         this.id = id;
         this.departureLocation = departureLocation;
         this.arrivalLocation = arrivalLocation;
-        this.departureTime = departureTime;
-        this.arrivalTime = arrivalTime;
+        this.distance = distance;
         this.tickets = new ArrayList<>();
     }
-
 
     public UUID getId() {
         return id;
@@ -48,20 +44,12 @@ public class Station {
         this.arrivalLocation = arrivalLocation;
     }
 
-    public Date getDepartureTime() {
-        return departureTime;
+    public double getDistance() {
+        return distance;
     }
 
-    public void setDepartureTime(Date departureTime) {
-        this.departureTime = departureTime;
-    }
-
-    public Date getArrivalTime() {
-        return arrivalTime;
-    }
-
-    public void setArrivalTime(Date arrivalTime) {
-        this.arrivalTime = arrivalTime;
+    public void setDistance(double distance) {
+        this.distance = distance;
     }
 
     public List<Ticket> getTickets() {

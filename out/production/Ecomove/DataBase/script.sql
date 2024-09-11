@@ -57,3 +57,24 @@ CREATE TABLE Client (
       LastName VARCHAR(255),
       NumberPhone int
   );
+CREATE TABLE Station (
+    id UUID PRIMARY KEY,
+    departureLocation VARCHAR(100),
+    arrivalLocation VARCHAR(100),
+    distance DOUBLE
+);
+
+INSERT INTO Station (id, departureLocation, arrivalLocation, distance) VALUES
+('1', 'Marrakech', 'Casablanca', 243.0),
+('2', 'Marrakech', 'Tanger', 571.0),
+('3', 'Marrakech', 'Safi', 278.0),
+('4', 'Marrakech', 'Agadir', 233.0),
+
+('5', 'Casablanca', 'Tanger', 340.0),
+('6', 'Casablanca', 'Safi', 286.0),
+('7', 'Casablanca', 'Agadir', 446.0),
+
+('8', 'Tanger', 'Safi', 778.0),
+('9', 'Tanger', 'Agadir', 746.0),
+
+('10', 'Safi', 'Agadir', 167.0);
