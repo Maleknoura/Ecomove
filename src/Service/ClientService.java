@@ -15,9 +15,8 @@ public class ClientService {
         }
         clientDAO.createClient(client);
     }
-    public Client getClientByEmail(String email){
-        clientDAO.getClientByEmail(email);
-        return null;
+    public Client getClientByEmail(String email) {
+        return clientDAO.getClientByEmail(email);
     }
     public void updateClient(String email, String newFirstName, String newLastName, String newPhoneNumber) {
         Client client = clientDAO.getClientByEmail(email);

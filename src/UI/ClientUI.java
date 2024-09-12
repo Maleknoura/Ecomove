@@ -1,17 +1,11 @@
 package UI;
 
-import DAO.ClientDAO;
-import DAO.ContractDAO;
-import Helpers.DijkstraAlgorithm;
-import Helpers.Graph;
-import DataBase.DbFunction;
+
 import Model.Client;
 import Service.ClientService;
 
-import java.util.List;
 import java.util.Scanner;
 
-import java.util.Scanner;
 
 public class ClientUI {
 

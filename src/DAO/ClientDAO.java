@@ -49,17 +49,19 @@ public class ClientDAO {
     }
 
     public boolean emailExists(String email) {
-        String query = "SELECT 1 FROM Client WHERE Email = ?";
-        try (PreparedStatement ps = connection.prepareStatement(query)) {
-            ps.setString(1, email);
-            try (ResultSet rs = ps.executeQuery()) {
-                return rs.next();
+        String query = "SELECT COUNT(*) FROM Client WHERE Email = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setString(1, email);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1) > 0;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return true;
     }
+
     public void updateClient(Client client) {
         String query = "UPDATE Client SET FirstName = ?, LastName = ?, NumberPhone = ? WHERE Email = ?";
         try (PreparedStatement ps = connection.prepareStatement(query)) {
