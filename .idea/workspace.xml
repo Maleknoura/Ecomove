@@ -5,58 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eda18db6-c528-4bfb-a324-a6ba1e14742f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/ClientUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecomove.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Ecomove.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/DAO/ClientDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/DAO/ContractDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/DAO/PartnerDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/DAO/PromotionalOfferDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/DAO/TicketDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/DataBase/DbFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/DataBase/script.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/Contract.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/ContractStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/OfferStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/Partner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/PartnerStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/PromotionalOffer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/ReductionType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/Reservation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/ReservationTicket.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/Station.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/Ticket.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/TicketStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Model/TransportType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Service/ClientService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Service/ContractService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Service/DijkstraAlgorithm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Service/Graph$Edge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Service/Graph.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Service/PartnerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Service/PromotionalOfferService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Service/StationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Service/TicketService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/Service/TravelPlanner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/UI/ConsoleUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/UI/ContractUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/UI/PartnerUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/UI/PromotionalOfferUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ecomove/UI/TicketUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataBase/DbFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/DbFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataBase/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/script.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/DijkstraAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/DijkstraAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/DistanceMatrixAPI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/TravelPlanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/TravelPlanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/ClientUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/ClientUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Service/ClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Service/ClientService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/UI/ClientUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/UI/ClientUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
