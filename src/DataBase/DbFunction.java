@@ -21,7 +21,6 @@ public class DbFunction {
         return instance;
     }
 
-
     public Connection connectToDb(String dbname, String user, String password) {
         if (conn == null) {
             try {
@@ -34,11 +33,13 @@ public class DbFunction {
                     System.out.println("Connection failed");
                 }
             } catch (Exception e) {
-                System.out.println(e.getMessage());
+                System.out.println("Connection error: " + e.getMessage());
+                e.printStackTrace();
             }
         }
         return conn;
     }
+
 
 
     public void closeConnection() {
@@ -52,7 +53,5 @@ public class DbFunction {
             }
         }
     }
-
 }
-
 

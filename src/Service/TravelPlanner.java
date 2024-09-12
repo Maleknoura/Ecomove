@@ -1,5 +1,8 @@
 package Service;
 
+import Helpers.DijkstraAlgorithm;
+import Helpers.Graph;
+
 import java.util.List;
 
 public class TravelPlanner {
