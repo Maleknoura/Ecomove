@@ -106,7 +106,27 @@ public class ClientUI {
     }
 
     private void updateProfile(Client client) {
-        System.out.println("Mise à jour du profil pour " + client.getFirstName() + " " + client.getLastName());
+        System.out.print("Veuillez saisir votre email : ");
+        String email = scanner.nextLine();
+
+        if (clientService.getClientByEmail(email) != null) {
+            System.out.println("Mettre à jour les informations du profil :");
+            System.out.print("Nouveau prénom  : ");
+            String newFirstName = scanner.nextLine();
+
+            System.out.print("Nouveau nom de famille : ");
+            String newLastName = scanner.nextLine();
+
+            System.out.print("Nouveau numéro de téléphone  : ");
+            String newPhoneNumber = scanner.nextLine();
+
+            clientService.updateClient(email,
+                    newFirstName.isEmpty() ? null : newFirstName,
+                    newLastName.isEmpty() ? null : newLastName,
+                    newPhoneNumber.isEmpty() ? null : newPhoneNumber);
+        } else {
+            System.out.println("Aucun client trouvé avec cet email.");
+        }
     }
 
     private void searchTickets() {
