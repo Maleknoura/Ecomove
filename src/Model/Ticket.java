@@ -35,7 +35,7 @@ public class Ticket {
         this.station = station;
     }
 
-
+public Ticket(){}
 
 
     public UUID getId() {

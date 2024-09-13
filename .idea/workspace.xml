@@ -5,22 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eda18db6-c528-4bfb-a324-a6ba1e14742f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAO/TicketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/TicketDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataBase/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/script.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Helpers/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Station.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Station.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/TicketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/TravelPlanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/TravelPlanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/ClientUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/ClientUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/TicketUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TicketUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DAO/TicketDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/TicketDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataBase/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataBase/script.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/Station.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Station.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Model/Ticket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Ticket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/UI/ClientUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/UI/ClientUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/UI/TicketUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/UI/TicketUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

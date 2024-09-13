@@ -18,7 +18,7 @@ public class TicketUI {
     private Scanner scanner;
 
     public TicketUI(TicketService ticketService) {
-        this.ticketService = ticketService; // Correction de la référence
+        this.ticketService = ticketService;
         this.scanner = new Scanner(System.in);
     }
 

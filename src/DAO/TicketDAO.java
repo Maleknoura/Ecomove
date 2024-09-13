@@ -77,48 +77,39 @@ public class TicketDAO {
         }
     }
 
-    public List<Ticket> findTicketsByStations(List<UUID> stationIds) {
+    public List<Ticket> getTicketsByStationId(UUID stationId) throws SQLException {
         List<Ticket> tickets = new ArrayList<>();
-        StringBuilder queryBuilder = new StringBuilder("SELECT t.* FROM Ticket t JOIN Station s ON t.stationId = s.id WHERE s.id IN (");
+        String sql = "SELECT t.id, t.transportType, t.salePrice, " +
+                "t.departureDateTime, t.arrivalDateTime, t.contractId, " +
+                "s.arrivalLocation, s.departureLocation, s.distance " +
+                "FROM tickets t " +
+                "JOIN stations s ON t.stationId = s.id " +
+                "WHERE s.id = ?";
 
-        for (int i = 0; i < stationIds.size(); i++) {
-            queryBuilder.append("?");
-            if (i < stationIds.size() - 1) {
-                queryBuilder.append(",");
-            }
-        }
-        queryBuilder.append(")");
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setObject(1, stationId);
 
-        String query = queryBuilder.toString();
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    Ticket ticket = new Ticket();
+                    ticket.setId(UUID.fromString(resultSet.getString("id")));
+                    String transportTypeString = resultSet.getString("transportType");
+                    TransportType transportType = TransportType.valueOf(transportTypeString);
+                    ticket.setTransportType(transportType);
+                    ticket.setSalePrice(resultSet.getBigDecimal("salePrice"));
+                    ticket.setDepartureDateTime(resultSet.getTimestamp("departureDateTime").toLocalDateTime());
+                    ticket.setArrivalDateTime(resultSet.getTimestamp("arrivalDateTime").toLocalDateTime());
+                    ticket.setContractId(UUID.fromString(resultSet.getString("contractId")));
 
-        try (PreparedStatement ps = connection.prepareStatement(query)) {
-            for (int i = 0; i < stationIds.size(); i++) {
-                ps.setObject(i + 1, stationIds.get(i));
-            }
-            try (ResultSet rs = ps.executeQuery()) {
-                while (rs.next()) {
-                    Ticket ticket = new Ticket(
-                            (UUID) rs.getObject("id"),
-                            TransportType.valueOf(rs.getString("transportType")),
-                            rs.getBigDecimal("purchasePrice"),
-                            rs.getBigDecimal("salePrice"),
-                            rs.getObject("saleDate", LocalDateTime.class),
-                            TicketStatus.valueOf(rs.getString("ticketStatus")),
-                            (UUID) rs.getObject("contractId"),
-                            rs.getObject("departureDateTime", LocalDateTime.class),
-                            rs.getObject("arrivalDateTime", LocalDateTime.class),
-                            new Station(
-                                    (UUID) rs.getObject("stationId"),
-                                    rs.getString("stationName"),
-                                    rs.getString("stationLocation"),
-                                    rs.getDouble("stationDistance")
-                            )
-                    );
+                    Station station = new Station();
+                    station.setArrivalLocation(resultSet.getString("arrivalLocation"));
+                    station.setDepartureLocation(resultSet.getString("departureLocation"));
+                    station.setDistance(resultSet.getDouble("distance"));
+
+                    ticket.setStation(station);
                     tickets.add(ticket);
                 }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
         return tickets;
     }

@@ -6,10 +6,7 @@ import Service.ContractService;
 import Service.TicketService;
 import Service.TravelPlanner;
 
-import Service.TravelPlanner;
 import UI.*;
-
-
 import java.sql.Connection;
 
 public class Main {
@@ -41,7 +38,6 @@ public class Main {
         ClientUI clientUI = new ClientUI(clientService,travelPlanner);
 
 
-        //consoleUI.showMainMenu();
         graph.loadFromDatabase(conn);
 
         clientUI.start();
