@@ -3,17 +3,23 @@ package UI;
 
 import Model.Client;
 import Service.ClientService;
+import Service.TicketService;
+import Service.TravelPlanner;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 
 public class ClientUI {
 
     private ClientService clientService;
+    private TravelPlanner travelPlanner;
     private Scanner scanner = new Scanner(System.in);
 
-    public ClientUI(ClientService clientService) {
+    public ClientUI(ClientService clientService, TravelPlanner travelPlanner) {
         this.clientService = clientService;
+        this.travelPlanner = travelPlanner;
     }
     public void start() {
         System.out.println("Bienvenue! Avez-vous déjà un compte ? (oui/non)");
@@ -130,8 +136,24 @@ public class ClientUI {
     }
 
     private void searchTickets() {
-        System.out.println("Recherche de tickets...");
+
+
+        System.out.print("Entrez la ville de départ : ");
+        String start = scanner.nextLine().trim();
+
+        System.out.print("Entrez la ville de destination : ");
+        String end = scanner.nextLine().trim();
+
+        List<String> path = travelPlanner.planItinerary(start, end);
+
+        if (path.isEmpty()) {
+            System.out.println("Aucun chemin trouvé entre " + start + " et " + end + ".");
+        } else {
+            System.out.println("Votre trajet est : " + String.join(" -> ", path));
+        }
     }
+
+
 
 
 }

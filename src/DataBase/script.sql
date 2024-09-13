@@ -6,6 +6,7 @@ CREATE TYPE ReductionType AS ENUM ('PERCENTAGE', 'FIXED_AMOUNT');
 CREATE TYPE OfferStatus AS ENUM ('ACTIVE', 'EXPIRED', 'SUSPENDED');
 
 
+
 CREATE TABLE Partner (
     id UUID PRIMARY KEY,
     companyName VARCHAR(255) NOT NULL,
@@ -31,14 +32,19 @@ CREATE TABLE Contract (
 
 CREATE TABLE Ticket (
     id UUID PRIMARY KEY,
-    transportType TransportType,
+    transportType VARCHAR(255),
     purchasePrice DECIMAL,
     salePrice DECIMAL,
     saleDate DATE,
-    ticketStatus TicketStatus,
+    ticketStatus VARCHAR(255),
+    departureDateTime TIMESTAMP,
+    arrivalDateTime TIMESTAMP,
     contractId UUID,
-    FOREIGN KEY (contractId) REFERENCES Contract(id) ON DELETE SET NULL
+    stationId UUID,
+    FOREIGN KEY (contractId) REFERENCES Contract(id) ON DELETE SET NULL,
+    FOREIGN KEY (stationId) REFERENCES Station(id) ON DELETE SET NULL
 );
+
 
 CREATE TABLE PromotionalOffer (
     id UUID PRIMARY KEY,

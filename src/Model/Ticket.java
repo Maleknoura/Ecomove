@@ -1,6 +1,7 @@
 package Model;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -12,24 +13,28 @@ public class Ticket {
         private TransportType transportType;
         private BigDecimal purchasePrice;
         private BigDecimal salePrice;
-        private Date saleDate;
+        private LocalDateTime saleDate;
         private TicketStatus ticketStatus;
+        private LocalDateTime departureDateTime;
+        private LocalDateTime arrivalDateTime;
         private UUID contractId;
         private List<ReservationTicket> reservationTickets;
-    private Station station;
+        private Station station;
 
-        public Ticket(UUID id, TransportType transportType, BigDecimal purchasePrice,
-                      BigDecimal salePrice, Date saleDate,
-                      TicketStatus ticketStatus, UUID contractId) {
-            this.id = id;
-            this.transportType = transportType;
-            this.purchasePrice = purchasePrice;
-            this.salePrice = salePrice;
-            this.saleDate = saleDate;
-            this.ticketStatus = ticketStatus;
-            this.contractId = contractId;
-            this.reservationTickets = new ArrayList<>();
+
+    public Ticket(UUID id, TransportType transportType, BigDecimal purchasePrice, BigDecimal salePrice, LocalDateTime saleDate, TicketStatus ticketStatus, UUID contractId, LocalDateTime departureDateTime, LocalDateTime arrivalDateTime, Station station) {
+        this.id = id;
+        this.transportType = transportType;
+        this.purchasePrice = purchasePrice;
+        this.salePrice = salePrice;
+        this.saleDate = saleDate;
+        this.ticketStatus = ticketStatus;
+        this.contractId = contractId;
+        this.departureDateTime = departureDateTime;
+        this.arrivalDateTime = arrivalDateTime;
+        this.station = station;
     }
+
 
 
 
@@ -65,11 +70,11 @@ public class Ticket {
         this.salePrice = salePrice;
     }
 
-    public Date getSaleDate() {
+    public LocalDateTime getSaleDate() {
         return saleDate;
     }
 
-    public void setSaleDate(Date saleDate) {
+    public void setSaleDate(LocalDateTime saleDate) {
         this.saleDate = saleDate;
     }
 
@@ -95,11 +100,27 @@ public class Ticket {
     public void addReservationTicket(ReservationTicket reservationTicket) {
         this.reservationTickets.add(reservationTicket);
     }
-    public Station getTrip() {
+    public Station getStation() {
         return station;
     }
 
     public void setStation(Station station) {
         this.station = station;
+    }
+
+    public LocalDateTime getArrivalDateTime() {
+        return arrivalDateTime;
+    }
+
+    public LocalDateTime getDepartureDateTime() {
+        return departureDateTime;
+    }
+
+    public void setArrivalDateTime(LocalDateTime arrivalDateTime) {
+        this.arrivalDateTime = arrivalDateTime;
+    }
+
+    public void setDepartureDateTime(LocalDateTime departureDateTime) {
+        this.departureDateTime = departureDateTime;
     }
 }

@@ -55,5 +55,11 @@ public class Graph {
         public double getDistance() {
             return distance;
         }
+
+        @Override
+        public String toString() {
+            return destination + " (distance: " + distance + ")";
+        }
     }
+
 }

@@ -19,7 +19,7 @@ public class Station {
         this.distance = distance;
         this.tickets = new ArrayList<>();
     }
-
+    public Station() {}
     public UUID getId() {
         return id;
     }

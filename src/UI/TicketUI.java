@@ -1,16 +1,15 @@
 package UI;
 
 import DAO.TicketDAO;
-import Model.Contract;
-import Model.Ticket;
-import Model.TicketStatus;
-import Model.TransportType;
+import Model.*;
 import Service.TicketService;
 
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -24,33 +23,59 @@ public class TicketUI {
     }
 
     public void createTicket() {
-        System.out.print("Enter transport type (PLANE, TRAIN, BUS): ");
-        TransportType transportType = TransportType.valueOf(scanner.nextLine().toUpperCase());
+        try {
+            System.out.print("Enter transport type (PLANE, TRAIN, BUS): ");
+            TransportType transportType = TransportType.valueOf(scanner.nextLine().toUpperCase());
 
-        System.out.print("Enter purchase price: ");
-        BigDecimal purchasePrice = scanner.nextBigDecimal();
+            System.out.print("Enter purchase price: ");
+            BigDecimal purchasePrice = scanner.nextBigDecimal();
 
-        System.out.print("Enter sale price: ");
-        BigDecimal salePrice = scanner.nextBigDecimal();
-        scanner.nextLine();
+            System.out.print("Enter sale price: ");
+            BigDecimal salePrice = scanner.nextBigDecimal();
+            scanner.nextLine();
 
-        System.out.print("Enter sale date (yyyy-MM-dd): ");
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate localDate = LocalDate.parse(scanner.nextLine(), formatter);
+            System.out.print("Enter sale date (yyyy-MM-dd HH:mm:ss): ");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            LocalDateTime saleDate = LocalDateTime.parse(scanner.nextLine(), formatter);
 
-        Date saleDate = Date.valueOf(localDate);
+            System.out.print("Enter ticket status (SOLD, CANCELLED, PENDING): ");
+            TicketStatus ticketStatus = TicketStatus.valueOf(scanner.nextLine().toUpperCase());
 
-        System.out.print("Enter ticket status (SOLD, CANCELLED, PENDING): ");
-        TicketStatus ticketStatus = TicketStatus.valueOf(scanner.nextLine().toUpperCase());
+            System.out.print("Enter contract ID: ");
+            UUID contractId = UUID.fromString(scanner.nextLine());
 
-        System.out.print("Enter contract ID: ");
-        UUID contractId = UUID.fromString(scanner.nextLine());
+            System.out.print("Enter departure date and time (yyyy-MM-dd HH:mm:ss): ");
+            LocalDateTime departureDateTime = LocalDateTime.parse(scanner.nextLine(), formatter);
 
-        Ticket ticket = new Ticket(UUID.randomUUID(), transportType, purchasePrice, salePrice, saleDate, ticketStatus, contractId);
+            System.out.print("Enter arrival date and time (yyyy-MM-dd HH:mm:ss): ");
+            LocalDateTime arrivalDateTime = LocalDateTime.parse(scanner.nextLine(), formatter);
 
-        ticketService.createTicket(ticket);
-        System.out.println("Ticket created successfully.");
+
+            Station station = null;
+
+            Ticket ticket = new Ticket(
+                    UUID.randomUUID(),
+                    transportType,
+                    purchasePrice,
+                    salePrice,
+                    saleDate,
+                    ticketStatus,
+                    contractId,
+                    departureDateTime,
+                    arrivalDateTime,
+                    station
+            );
+
+            ticketService.createTicket(ticket);
+            System.out.println("Ticket created successfully.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid input: " + e.getMessage());
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid format for price or date.");
+            scanner.next();
+        }
     }
+
 
     public void listAllTickets() {
         ticketService.displayAllTickets();

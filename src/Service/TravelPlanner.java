@@ -15,5 +15,8 @@ public class TravelPlanner {
     public List<String> planItinerary(String start, String end) {
         return DijkstraAlgorithm.findShortestPath(graph, start, end);
     }
+    public Graph getGraph() {
+        return graph;
+    }
 }
 
